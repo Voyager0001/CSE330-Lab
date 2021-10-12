@@ -128,11 +128,9 @@ class Float8():
         elif int(self.exponent,2)==7 and int(self.mantissa,2)!=0:
             val="nan"
         elif int(self.exponent,2)!=0:
-            mantissa="."+self.mantissa
-            val=((-1)**(int(self.sign)))*(2**(int(self.exponent,2)-3))*float((1+(int(mantissa[1:], 2) / 2.**(len(mantissa) - 1))))
+            val=((-1)**(int(self.sign)))*(2**(int(self.exponent,2)-3))*float((1+(int(mantissa, 2) / (2.**len(mantissa)))))
         else:
-            mantissa="."+self.mantissa
-            val=((-1)**(int(self.sign)))*(2**-2)*float((0+(int(mantissa[1:], 2) / 2.**(len(mantissa) - 1))))
+            val=((-1)**(int(self.sign)))*(2**-2)*float((0+(int(mantissa, 2) / (2.**len(mantissa)))))
         
         return val
 
@@ -270,11 +268,11 @@ class Float16():
         elif int(self.exponent,2)==15 and int(self.mantissa,2)!=0:
             val="nan"
         elif int(self.exponent,2)!=0:
-            mantissa="."+self.mantissa
-            val=((-1)**(int(self.sign)))*(2**(int(self.exponent,2)-7))*float((1+(int(mantissa[1:], 2) / 2.**(len(mantissa) - 1))))
+            
+            val=((-1)**(int(self.sign)))*(2**(int(self.exponent,2)-7))*float((1+(int(mantissa, 2) / (2.**(len(mantissa)))))
         else:
-            mantissa="."+self.mantissa
-            val=((-1)**(int(self.sign)))*(2**-6)*float((0+(int(mantissa[1:], 2) / 2.**(len(mantissa) - 1))))
+            
+            val=((-1)**(int(self.sign)))*(2**-6)*float((0+(int(mantissa, 2) / (2.**len(mantissa)))))
 
         return val
 
