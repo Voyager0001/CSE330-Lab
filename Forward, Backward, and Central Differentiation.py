@@ -67,7 +67,7 @@ def backward_diff(f, h, x):
 def central_diff(f, h, x):
     # --------------------------------------------
     # YOUR CODE HERE
-    return ( f(x+h)-f(x-h)) / 2*h
+    return ( f(x+h)-f(x-h)) / (2*h)
     # --------------------------------------------
 
 
